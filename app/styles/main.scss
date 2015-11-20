@@ -1,0 +1,149 @@
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import url(https://fonts.googleapis.com/css?family=Cabin:400,700);
+
+.container {
+  background: #242424;
+  font-family: Cabin, Helvetica, sans-serif;
+}
+
+.info {
+    margin: 0px;
+
+    h1 {
+      color: #dde;
+      font-size: 60px;
+    }
+
+    .now-playing {
+      padding-left: 0px;
+      padding-right: 0px;
+
+      .album-art {
+        img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      .song-info {
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #dde;
+        .song-name {
+          font-weight: bolder;
+          font-size: 20px;
+        }
+        .song-artist, .song-album {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .search {
+      background: #25cf21;
+      border-style: none;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      color: #dde;
+      border-radius: 35px;
+      width: 175px;
+      outline: none;
+    }
+    .search:focus {
+      outline: none;
+    }
+  }
+
+  h3 {
+    color: #dde;
+  }
+
+  .queue-container {
+    background: #eef;
+    overflow-x: hidden;
+  }
+
+  .queue-elem {
+    height: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+    div {
+      display: inline-block;
+      line-height: 35px;
+    }
+
+    .queuer {
+      font-weight: bold;
+    }
+  }
+
+  .collective-queue {
+    .song {
+      width: 200px;
+    }
+  }
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    overflow: scroll;
+  }
+
+  .info {
+    h1 {
+      padding-top: 25px;
+      font-size: 85px;
+      margin-bottom: 15px;
+    }
+
+    .now-playing {
+      .album-art {
+        img {
+          float: right;
+          width: 75px;
+          height: 75px;
+        }
+      }
+
+      .song-info {
+        text-align: left;
+        .song-name {
+          font-size: 20px;
+        }
+        .song-artist, .song-album {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .search {
+      margin-bottom: 15px;
+    }
+  }
+
+  .queues {
+    margin-bottom: 0px;
+    white-space: nowrap;
+
+    .queue-container {
+      overflow-y: scroll;
+    }
+  }
+
+  .collective-queue {
+    .song {
+      width: 375px;
+    }
+  }
+
+}
