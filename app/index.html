@@ -19,14 +19,14 @@
 	<!-- build:js scripts/vendor/modernizr.js -->
 	<script src="/bower_components/modernizr/modernizr.js"></script>
 	<!-- endbuild -->
-	
+
 	</head>
 	<body>
 	<!--[if lt IE 10]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
 
-	
+
 	<div class="container">
 		<div class="info">
 			<center><h1>Groupify</h1></center>
@@ -54,29 +54,31 @@
 					</div>
 
 					<div class="modal-body">
-						<form>
-							<div class="row search-bar">
-								<div class="col-md-10">
-									<input type="text" class="search-field form-control" placeholder="search for a track">
-								</div>
-								<div class="col-md-2 search-button">
-									<button class="btn btn-sm search">SEARCH</button>
-								</div>
+						<div class="row search-bar">
+							<div class="col-md-10">
+								<input type="text" id="searchquery" class="search-field form-control" placeholder="search for a track">
 							</div>
-						</form>							
+							<div class="col-md-2 search-button">
+								<button onclick="search()" class="btn btn-sm search">SEARCH</button>
+							</div>
+						</div>
 
 
 
 						<div class="panel-group search-results" id="accordion" role="tablist" aria-multiselectable="false">
-							<div class="search-result">
+							<div id="sr-target"></div>
+							<script id="sr-temp" type="x-tmpl-mustache">
+							{{ #results }}
+							<div class="search-result panel">
+
 								<div class="search-result-basic" role="tab" id="headingOne">
 									<h4 class="panel-title">
 										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 											<div class="row">
 												<div class="song col-xs-6 col-md-7">{{ songName }}</div>
 												<div class="artist col-xs-6 col-md-3">{{ artist }}</div>
-												<div class="col-xs-12 col-md-2">	
-													<center>											
+												<div class="col-xs-12 col-md-2">
+													<center>
 														<button type="button" class="btn btn-md add">
 															ADD
 														</button>
@@ -99,6 +101,8 @@
 									</div>
 								</div>
 							</div>
+							{{ /results }}
+							</script>
 						</div>
 					</div>
 
@@ -221,7 +225,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 
 	<!-- build:js(.) scripts/vendor.js -->
 	<!-- bower:js -->
@@ -229,7 +233,7 @@
 	<!-- endbower -->
 	<!-- endbuild -->
 
-	
+
 	<!-- build:js(.) scripts/plugins.js -->
 	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
 	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
@@ -243,11 +247,17 @@
 	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
 	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
 	<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+
+
+	<script src="/bower_components/socket.io-client/socket.io.js"></script>
+
 	<!-- endbuild -->
-	
+
 
 	<!-- build:js scripts/main.js -->
+	<script src="scripts/mustache.js"></script>
 	<script src="scripts/main.js"></script>
+
 	<!-- endbuild -->
 	</body>
 </html>
