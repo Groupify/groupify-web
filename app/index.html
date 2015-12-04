@@ -73,8 +73,8 @@
 									<h4 class="panel-title">
 										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 											<div class="row">
-												<div class="song col-xs-6 col-md-7">Shut Up And Dance</div>
-												<div class="artist col-xs-6 col-md-3">Walk the Moon</div>
+												<div class="song col-xs-6 col-md-7">{{ songName }}</div>
+												<div class="artist col-xs-6 col-md-3">{{ artist }}</div>
 												<div class="col-xs-12 col-md-2">	
 													<center>											
 														<button type="button" class="btn btn-md add">
@@ -89,12 +89,12 @@
 								<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 									<div class="search-result-detail panel-body">
 										<div class="album-art col-md-2">
-											<center><img src="https://i.scdn.co/image/680f63e0199dc160f414b5be084b3d91493c67a6"></center>
+											<center><img src="{{ albumArt }}"></center>
 										</div>
 										<div class="song-info col-md-8">
-											<div class="song-name">Guns and Ships</div>
-											<div class="song-artist">Daveed Diggs</div>
-											<div class="song-album">Hamilton (Original Broadway Cast Recording)</div>
+											<div class="song-name">{{ songName }}</div>
+											<div class="song-artist">{{ artist }}</div>
+											<div class="song-album">{{ album }}</div>
 										</div>
 									</div>
 								</div>
